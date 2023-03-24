@@ -1,0 +1,27 @@
+
+
+useState to Create State Variables
+The useState hook allows us to create state variables in a React function component.
+When we create a state variable, we must provide it a default value (which can be any data type).
+We get that state variable as the first value in an array, which we can destructure and declare with const.
+Destructuring is a convenient way of creating new variables by extracting some values from data stored in objects or arrays. To name a few use cases, destructuring can be used to destructure function parameters or this. props in React projects for instance.
+
+
+useState also gives us a setter function to update the state after it is created.
+To update our state variable, we pass the setter function the new value we want our state to be.
+When you declare your setter function, in most cases you will prefix it with the word "set"
+
+
+useState can be used once or multiple times within a single component.
+Sometimes you will want to create multiple state variables and other times you may want to use a single variable with an object
+You can use an object with useState, which allows you to manage individual values as key-value pairs.
+when you are updating state with an object, you need to spread in the previous state.
+Why? Because any properties other than the one you are updating will not be included in the new state.
+
+
+If the new state depends on the previous state, we can take the previous state variable and apply whatever changes we want to make.
+To guarantee the update is done reliably, we can use a function within the setter function that gives us the correct previous state.
+
+
+The spread syntax, a three dots (...) is a new addition to the set of operators in JavaScript ES6. It takes in an iterable (e.g an array) and expands it into individual elements.
+The spread syntax is commonly used to make shallow copies of JS objects. Using this operator makes the code concise and enhances its readability.
