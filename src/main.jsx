@@ -6,7 +6,7 @@ import { useState } from 'react'
 //useState
 function App1() {
   const [name] = useState("Abelti");//state declare giving it a default value of Abelti
-  return <p> My name is {name} </p>;
+  return <h1> My name is {name} </h1>;
 }
 
 
@@ -18,7 +18,7 @@ function App2() {
   function changeName() {
     nameset("AB");
   }
-  return <p onClick={changeName}> My name is {name}</p>;
+  return <h1 onClick={changeName}> My name is {name}</h1>;
 }
 
 
@@ -32,7 +32,7 @@ function App3() {
     setName("AB");
   }
 
-  return <p onClick={changeName}> My name is {name} and I am {years} years old and I am a {sex}</p>
+  return <h1 onClick={changeName}> My name is {name} and I am {years} years old and I am a {sex}</h1>
 }
 
 
@@ -52,7 +52,7 @@ function App4() {
 
   return (
     <>
-      <p onClick={changeName}> My name is {name} and I am {year} old.</p>
+      <h1 onClick={changeName}> My name is {name} and I am {year} old.</h1>
 
       <button onClick={changeYear}>Add Year</button>
     </>
@@ -93,14 +93,32 @@ function App5() {
 
   return (
     <>
-      <p onClick={changeName}> My name is {abelti.name} and I am {abelti.year} old and I am an {abelti.nationality} citizen.</p>
+      <h1 onClick={changeName}> My name is {abelti.name} and I am {abelti.year} old and I am an {abelti.nationality} citizen.</h1>
 
       <button onClick={changeYear}>Add Year</button>
     </>
   );
 }
 
+// state as a function
 
+const App6 = () => {
+  const [count, setCount] = useState(0);
+  return (
+    <>
+      <h1>Count value is: {count}</h1>
+      <button onClick={() => setCount(0)}>Reset</button>
+      <button 
+        onClick={() => setCount(prevCount => prevCount + 1)}>
+        Plus (+)
+      </button>
+      <button 
+        onClick={() => setCount(prevCount => prevCount - 1)}>
+       Minus (-)
+      </button>
+    </>
+  );
+}
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
