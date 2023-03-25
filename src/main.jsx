@@ -64,36 +64,39 @@ function App4() {
 function App5() {
   // const [name, setName] = React.useState("Abelti");
   // const [year, setYear] = React.useState(0);
-
+  
   const [abelti, setState] = React.useState({
     name: "Abelti",
     year: 25,
-    nationality: "Ethiopian"
+    nationality: "Ethiopian",
+    sex: "Male"
   });
-  const [tsega, setStates]= React.useState(
+  const [havi, setStates]= React.useState(
     {
-      name: "Tsega",
+      name: "Havana",
       age: 20,
-      nation: "Ethiopian"
+      nation: "Ethiopian",
+      sex: "Female"
     }
   );
 
   function changeName() {
-    setState({...abelti, name: "AB"});
+    setStates({...havi, name: "AB"});
   }
 
   function changeYear() {
-    setState(prev => {
+    setStates(prev => {
       return {
         ...prev,
-        year: prev.year + 1
+        age: prev.age+ 1
       }
     })
   }
 
   return (
     <>
-      <h1 onClick={changeName}> My name is {abelti.name} and I am {abelti.year} old and I am an {abelti.nationality} citizen.</h1>
+      <h1 onClick={changeName}> My name is {abelti.name} and I am {abelti.year} years old and I am an {abelti.nationality} {abelti.sex} citizen.</h1>
+      <h1 onClick={changeName}> My name is {havi.name} and I am {havi.age} years old and I am an {havi.nation} {havi.sex} citizen.</h1>
 
       <button onClick={changeYear}>Add Year</button>
     </>
@@ -104,6 +107,7 @@ function App5() {
 
 const App6 = () => {
   const [count, setCount] = useState(0);
+  
   return (
     <>
       <h1>Count value is: {count}</h1>
@@ -122,4 +126,4 @@ const App6 = () => {
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(<App2 />)
+root.render(<App6 />)
